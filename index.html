@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Time Tracking System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Driver Time Tracking System</h1>
+        
+        <div class="search-container">
+            <input type="text" id="searchNumber" placeholder="Search by number(s), e.g. 101,102">
+            <button onclick="searchByNumber()">Search</button>
+        </div>
+
+        <div class="print-buttons" style="display: flex; gap: 10px; margin-bottom: 10px;">
+            <button type="button" onclick="window.print()">Print Page</button>
+        </div>
+
+        <div class="table-container">
+            <table id="driverTable">
+                <thead>
+                    <tr>
+                        <th>Number</th>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Overtime Hours </th>
+                        <th>Overtime Rate 1hr(₹)</th>
+                        <th>Total Distance (km)</th>
+                        <th>Section 1 (50km)</th>
+                        <th>Section 2 (25km)</th>
+                        <th>Section 3 (Remaining)</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Total</td>
+                        <td id="totalTime">0h 0m</td>
+                        <td id="totalAmount">₹0</td>
+                        <td id="totalDistance">0</td>
+                        <td id="totalSection1">0</td>
+                        <td id="totalSection2">0</td>
+                        <td id="totalSection3">0</td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="add-entry">
+            <h2>Add New Entry</h2>
+            <form id="entryForm">
+                <input type="text" id="numbers" placeholder="Enter numbers (e.g., 101,102)" required>
+                <input type="date" id="date" required>
+                <div class="time-input">
+                    <input type="number" id="hours" placeholder="Hours" min="0" required>
+                    <input type="number" id="minutes" placeholder="Minutes" min="0" max="59" required>
+                </div>
+                <input type="number" id="entryTotalDistance" placeholder="Total Distance (km)" min="0" step="0.01" required>
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                    <input type="checkbox" id="dayOff">
+                    <label for="dayOff" style="color: #fff;">Day Off</label>
+                </div>
+                <button type="submit">Add Entry</button>
+            </form>
+        </div>
+
+        <div class="driver-summary">
+            <h2>Driver Summary</h2>
+            <div id="driverSummary"></div>
+        </div>
+
+        <div class="employee-link">
+            <a href="employees.html" class="manage-employees-btn">Manage Employees</a>
+        </div>
+    </div>
+    <span class="site-initials">By Kanishk D</span>
+    <script src="script.js"></script>
+</body>
+</html> 

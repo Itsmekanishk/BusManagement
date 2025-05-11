@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Management</h1>
+        
+        <div class="add-employee">
+            <h2>Add/Edit Employee</h2>
+            <form id="employeeForm">
+                <input type="text" id="employeeName" placeholder="Employee Name" required>
+                <input type="text" id="employeeToken" placeholder="Token Number" required>
+                <input type="number" id="employeeHourlyRate" placeholder="Hourly Rate (₹)" min="0" step="0.01" required>
+                <button type="submit">Save Employee</button>
+            </form>
+        </div>
+
+        <div class="employee-list">
+            <h2>Employee List</h2>
+            <table id="employeeTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Token Number</th>
+                        <th>Hourly Rate (₹)</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="employeeTableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="employees.js"></script>
+</body>
+</html> 
